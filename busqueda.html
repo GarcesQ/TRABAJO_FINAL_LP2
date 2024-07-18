@@ -72,6 +72,10 @@
     </div>
 
     <script>
+        function replaceInvalidValues(value) {
+            return (value === 'N/A' || value === 'Not available' || value === undefined || value === null) ? 0 : value;
+        }
+
         async function lookupCategory() {
             const query = document.getElementById('query').value;
             const endpoint = `https://world.openfoodfacts.org/category/${query}.json`;
@@ -85,19 +89,19 @@
                 products.forEach(product => {
                     product_info += `
                         <div class="producto">
-                            <h2>${product.product_name || 'No product name'}</h2>
-                            <p><strong>Marca:</strong> ${product.brands || 'No brand'}</p>
-                            <p><strong>Ingredientes:</strong> ${product.ingredients_text || 'No ingredients'}</p>
+                            <h2>${replaceInvalidValues(product.product_name) || 'No product name'}</h2>
+                            <p><strong>Marca:</strong> ${replaceInvalidValues(product.brands) || 'No brand'}</p>
+                            <p><strong>Ingredientes:</strong> ${replaceInvalidValues(product.ingredients_text) || 'No ingredients'}</p>
                             <p><strong>Nutrientes:</strong></p>
                             <ul>
-                                <li>Energía: ${product.nutriments.energy || 'N/A'} kJ</li>
-                                <li>Grasa: ${product.nutriments.fat || 'N/A'} g</li>
-                                <li>Carbohidratos: ${product.nutriments.carbohydrates || 'N/A'} g</li>
-                                <li>Proteínas: ${product.nutriments.proteins || 'N/A'} g</li>
-                                <li>Sal: ${product.nutriments.salt || 'N/A'} g</li>
-                                <li>Azúcares: ${product.nutriments.sugars || 'N/A'} g</li>
+                                <li>Energía: ${replaceInvalidValues(product.nutriments.energy)} kJ</li>
+                                <li>Grasa: ${replaceInvalidValues(product.nutriments.fat)} g</li>
+                                <li>Carbohidratos: ${replaceInvalidValues(product.nutriments.carbohydrates)} g</li>
+                                <li>Proteínas: ${replaceInvalidValues(product.nutriments.proteins)} g</li>
+                                <li>Sal: ${replaceInvalidValues(product.nutriments.salt)} g</li>
+                                <li>Azúcares: ${replaceInvalidValues(product.nutriments.sugars)} g</li>
                             </ul>
-                            <img src="${product.image_url || ''}" alt="${product.product_name || 'No product name'}">
+                            <img src="${replaceInvalidValues(product.image_url) || ''}" alt="${replaceInvalidValues(product.product_name) || 'No product name'}">
                         </div>
                     `;
                 });
@@ -111,3 +115,4 @@
     </script>
 </body>
 </html>
+
