@@ -1,0 +1,1404 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de OpenFoodFacts</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5dc; /* Beige background */
+            color: #333333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #8b4513; /* SaddleBrown */
+            text-align: center;
+        }
+        table.dataTable {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 0 auto;
+            background-color: #ffffff; /* White background */
+        }
+        table.dataTable th, table.dataTable td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        table.dataTable th {
+            background-color: #f4a460; /* SandyBrown */
+            color: white;
+        }
+        table.dataTable tr:nth-child(even) {
+            background-color: #f2f2f2; /* Light grey */
+        }
+        table.dataTable tr:hover {
+            background-color: #ddd; /* Darker grey */
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+    <h1>Datos de OpenFoodFacts</h1>
+    <table id="dataTable" class="display" style="width:100%">
+        <thead>
+            <tr>
+                
+                <th>Producto</th>
+                
+                <th>Categoría</th>
+                
+                <th>Ingredientes</th>
+                
+                <th>Energía (kcal)</th>
+                
+                <th>Grasas (g)</th>
+                
+                <th>Proteínas (g)</th>
+                
+                <th>Hidratos de Carbono (g)</th>
+                
+                <th>Azúcares (g)</th>
+                
+                <th>Segmento</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                
+                <td>Chocolat noir 65% de cacao</td>
+                
+                <td>chocolates</td>
+                
+                <td>nan</td>
+                
+                <td>559</td>
+                
+                <td>41.0</td>
+                
+                <td>6.8</td>
+                
+                <td>35.0</td>
+                
+                <td>32.0</td>
+                
+                <td>Alta Energía</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>70% Cacao noir intense</td>
+                
+                <td>chocolates</td>
+                
+                <td>cocoa paste, sugar, cocoa butter, vanilla,</td>
+                
+                <td>566</td>
+                
+                <td>41.0</td>
+                
+                <td>9.5</td>
+                
+                <td>34.0</td>
+                
+                <td>30.0</td>
+                
+                <td>Alta Energía</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Noir Excellence 90%</td>
+                
+                <td>chocolates</td>
+                
+                <td>cocoa mass, cocoa butter, low-fat cocoa, sugar, vanilla,</td>
+                
+                <td>592</td>
+                
+                <td>55.0</td>
+                
+                <td>10.0</td>
+                
+                <td>14.0</td>
+                
+                <td>7.0</td>
+                
+                <td>Alta Energía</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Excellence 85% Cacao Chocolat Noir Puissant</td>
+                
+                <td>chocolates</td>
+                
+                <td>Pâte de cacao, cacao maigre, beurre de cacao, cassonade, vanille. Peut contenir du lait, des fruits à coque, du soja et des graines de sésame.</td>
+                
+                <td>584</td>
+                
+                <td>46.0</td>
+                
+                <td>12.5</td>
+                
+                <td>22.0</td>
+                
+                <td>15.0</td>
+                
+                <td>Alta Energía</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Edelbitter mild 85%</td>
+                
+                <td>chocolates</td>
+                
+                <td>Kakaomasse, fettarmes Kakaopulver, Kakaobutter, Zucker, Emulgator: Lecithine (Soja); Vanilleextrakt</td>
+                
+                <td>579</td>
+                
+                <td>46.8</td>
+                
+                <td>10.8</td>
+                
+                <td>21.4</td>
+                
+                <td>12.9</td>
+                
+                <td>Alta Energía</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Extra dark chocolate 74% cacao</td>
+                
+                <td>chocolates</td>
+                
+                <td>cocoa mass, sugar, cocoa butter, fat reduced cocoa powder, emulsifier: lecithins (soya), natural vanilla flavouring, dark chocolate contains: cocoa solids 74% minimum,</td>
+                
+                <td>570</td>
+                
+                <td>42.0</td>
+                
+                <td>10.0</td>
+                
+                <td>32.0</td>
+                
+                <td>26.0</td>
+                
+                <td>Alta Energía</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Milka Lait Alpin</td>
+                
+                <td>chocolates</td>
+                
+                <td>Sucre, beurre de cacao, pâte de cacao, LAIT écrémé en poudre, lactosérum en poudre (de LAIT), BEURRE concentré, émulsifiant (lécithines de SOJA), pâte de NOISETTE, arôme.</td>
+                
+                <td>539</td>
+                
+                <td>31.0</td>
+                
+                <td>6.5</td>
+                
+                <td>57.0</td>
+                
+                <td>55.0</td>
+                
+                <td>Alta Energía</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Excellence 70% Cocoa Intense Dark</td>
+                
+                <td>chocolates</td>
+                
+                <td>Cocoa mass, sugar, cocoa butter, vanilla.</td>
+                
+                <td>566</td>
+                
+                <td>41.0</td>
+                
+                <td>9.5</td>
+                
+                <td>34.0</td>
+                
+                <td>30.0</td>
+                
+                <td>Alta Energía</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Nestlé Dessert</td>
+                
+                <td>chocolates</td>
+                
+                <td>sugar, cocoa paste, cocoa butter, emulsifier sunflower lecithin, natural vanilla aroma madagascar, cocoa: 52% minimum, may contain: nuts, milk,</td>
+                
+                <td>548</td>
+                
+                <td>34.1</td>
+                
+                <td>6.0</td>
+                
+                <td>50.7</td>
+                
+                <td>46.4</td>
+                
+                <td>Alta Energía</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>85% Cocoa Robust Dark Chocolate Bar</td>
+                
+                <td>chocolates</td>
+                
+                <td>cocoa mass, fat-reduced cocoa, cocoa butter, demerara sugar, vanilla</td>
+                
+                <td>584</td>
+                
+                <td>46.0</td>
+                
+                <td>12.5</td>
+                
+                <td>22.0</td>
+                
+                <td>15.0</td>
+                
+                <td>Alta Energía</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Doux 70% noir subtil</td>
+                
+                <td>chocolates</td>
+                
+                <td>cocoa mass, sugar, cocoa butter, emulsifier (soya lecithin), vanilla, may contain hazelnuts, almonds, milk,</td>
+                
+                <td>610</td>
+                
+                <td>48.0</td>
+                
+                <td>6.9</td>
+                
+                <td>33.0</td>
+                
+                <td>29.0</td>
+                
+                <td>Alta Energía</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Ecuador Edelbitter 70%</td>
+                
+                <td>chocolates</td>
+                
+                <td>Kakaomasse, Zucker, Kakaobutter, Emulgator: Lecithine (_Soja_); Vanilleextrakt.</td>
+                
+                <td>565</td>
+                
+                <td>41.5</td>
+                
+                <td>8.4</td>
+                
+                <td>33.8</td>
+                
+                <td>27.2</td>
+                
+                <td>Alta Energía</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Bio Chocolat Noir Cacao 70%</td>
+                
+                <td>chocolates</td>
+                
+                <td>Pâte de cacao¹, sucre de canne¹, beurre de cacao¹, émulsifiant : lécithines (_soja_)¹. ¹ingrédient issu de l'agriculture biologique.</td>
+                
+                <td>572</td>
+                
+                <td>41.6</td>
+                
+                <td>8.5</td>
+                
+                <td>35.3</td>
+                
+                <td>28.0</td>
+                
+                <td>Alta Energía</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Noir - Noisettes Entières</td>
+                
+                <td>chocolates</td>
+                
+                <td>Sucre, pâte de cacao, NOISETTES (24%), beurre de cacao, BEURRE concentré, émulsifiant (lécithines de SOJA), arôme naturel de vanille, LAIT écrémé en poudre.</td>
+                
+                <td>569</td>
+                
+                <td>39.0</td>
+                
+                <td>7.3</td>
+                
+                <td>43.0</td>
+                
+                <td>40.0</td>
+                
+                <td>Alta Energía</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Excellence 99% Cacao Noir Absolute</td>
+                
+                <td>chocolates</td>
+                
+                <td>Cocoa solids 99%, Cocoa paste, fat-reduced cocoa, cocoa butter, demerara sugar. May contain nuts, milk and soya.</td>
+                
+                <td>590</td>
+                
+                <td>51.0</td>
+                
+                <td>15.0</td>
+                
+                <td>8.0</td>
+                
+                <td>1.0</td>
+                
+                <td>Alta Energía</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Noir Extra</td>
+                
+                <td>chocolates</td>
+                
+                <td>sugar, cocoa paste, cocoa butter, lean cocoa powder, emulsifier (soy lecithin), flavouring, skimmed milk powder, cocoa: 47% minimum, may contain wheat, barley and nuts,</td>
+                
+                <td>508</td>
+                
+                <td>28.0</td>
+                
+                <td>4.9</td>
+                
+                <td>55.0</td>
+                
+                <td>52.0</td>
+                
+                <td>Alta Energía</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Chocolat noir extra-fin, traditionnel.</td>
+                
+                <td>chocolates</td>
+                
+                <td>Pâte de cacao, beurre de cacao, sucre, cacao maigre, beurre laitier concentré. Peut contenir des noisettes, des amandes et d'autres fruits à coque, du lait, du soja.</td>
+                
+                <td>576</td>
+                
+                <td>46.0</td>
+                
+                <td>10.0</td>
+                
+                <td>24.0</td>
+                
+                <td>17.0</td>
+                
+                <td>Alta Energía</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Chocolat noir 47% et pointe de fleur de sel</td>
+                
+                <td>chocolates</td>
+                
+                <td>sugar, cocoa paste, cocoa butter, concentrated dairy butter, emulsifier (soy lecithin), fleur de sel 0,3%, aroma (vanilla), 
+cocoa: 47% minimum,</td>
+                
+                <td>537</td>
+                
+                <td>32.0</td>
+                
+                <td>5.7</td>
+                
+                <td>52.0</td>
+                
+                <td>47.0</td>
+                
+                <td>Alta Energía</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Bio Chocolat Noir Equateur 85% cacao</td>
+                
+                <td>chocolates</td>
+                
+                <td>Pâte de cacao* Équateur, beurre de cacao*, sucre*, extrait de vanille*</td>
+                
+                <td>639</td>
+                
+                <td>55.3</td>
+                
+                <td>9.0</td>
+                
+                <td>20.6</td>
+                
+                <td>14.0</td>
+                
+                <td>Alta Energía</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Čokoláda</td>
+                
+                <td>chocolates</td>
+                
+                <td>sugar, cocoa paste, cocoa butter, emulsifier: lecithins (sunflower), natural vanilla flavour,</td>
+                
+                <td>544</td>
+                
+                <td>35.0</td>
+                
+                <td>4.8</td>
+                
+                <td>48.0</td>
+                
+                <td>45.6</td>
+                
+                <td>Alta Energía</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Cruesli Mélange De Noix</td>
+                
+                <td>cereals</td>
+                
+                <td>_avoine_ complète (32%), _blé_ complet (18%), sirop de glucose, huile de tournesol, sucre, _amandes_ grillées (4,2%), _noisettes_ (4%), oligofructose, _noix de Pécan_ (1,5%), farine de _blé_, farine de riz, _noix du Brésil_ (1%), miel, arômes naturels, antioxydant (tocophérol).</td>
+                
+                <td>462</td>
+                
+                <td>19.0</td>
+                
+                <td>8.5</td>
+                
+                <td>57.0</td>
+                
+                <td>12.0</td>
+                
+                <td>Alta Energía</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Céréales Chocapic</td>
+                
+                <td>cereals</td>
+                
+                <td>Blé complet 35,0%, chocolat en poudre 22,5% (sucre, cacao en poudre), farine de blé 17,0%, semoule de maïs, sirop de glucose, sucre, extrait de malt d'orge (orge, orge malté), contient de l'huile de tournesol et/ou de palme, carbonate de calcium, émulsifiant : lécithines; sel, arômes naturels, fer, vitamines B3, B5, D, B6, B1, B2 et B9.</td>
+                
+                <td>388</td>
+                
+                <td>4.8</td>
+                
+                <td>8.8</td>
+                
+                <td>73.6</td>
+                
+                <td>22.4</td>
+                
+                <td>Bajo en Grasa</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Oat Drink Barista Edition</td>
+                
+                <td>cereals</td>
+                
+                <td>Water, _OATS_ 10%, rapeseed oil, acidity regulator (dipotassium phosphate), minerals (calcium carbonate, potassium iodide), salt, vitamins (D2, riboflavin and B12).</td>
+                
+                <td>61</td>
+                
+                <td>3.0</td>
+                
+                <td>1.1</td>
+                
+                <td>7.1</td>
+                
+                <td>4.0</td>
+                
+                <td>Bajo en Grasa</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Haferflocken Extra zart</td>
+                
+                <td>cereals</td>
+                
+                <td>soft whole-oat flakes,</td>
+                
+                <td>372</td>
+                
+                <td>7.0</td>
+                
+                <td>13.5</td>
+                
+                <td>58.7</td>
+                
+                <td>0.7</td>
+                
+                <td>Bajo en Grasa</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Flocons d'avoine céréale complète</td>
+                
+                <td>cereals</td>
+                
+                <td>Flocons d'_avoine_ complète issue de l'agriculture biologique,</td>
+                
+                <td>362</td>
+                
+                <td>7.1</td>
+                
+                <td>11.0</td>
+                
+                <td>58.0</td>
+                
+                <td>1.7</td>
+                
+                <td>Bajo en Grasa</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Ohne Zucker Hafer</td>
+                
+                <td>cereals</td>
+                
+                <td>Haferbasis (Wasser,  Hafer (8,7%)), Zichorienwurzelfasern, Sonnenblumenöl, Calciumcarbonat, Meersalz, Stabilisator (Gellan), Vitamine (B2, B12, D2)</td>
+                
+                <td>40</td>
+                
+                <td>1.5</td>
+                
+                <td>0.2</td>
+                
+                <td>5.8</td>
+                
+                <td>0.0</td>
+                
+                <td>Bajo en Grasa</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Muesli Superfruits</td>
+                
+                <td>cereals</td>
+                
+                <td>Flocons d'_avoine_ complète 60 %, raisins secs* 18 % (raisins secs*, huile de tournesol*), flocons d'_épeautre_* complets (_blé_) 12 %, flocons de _blé_* complet toasté 5 %, amandes* entières 3 %, canneberges lyophilisées* 0,7 %, cassis lyophilisés* 0,7 %, myrtilles lyophilisées* 0,7 %,</td>
+                
+                <td>357</td>
+                
+                <td>6.0</td>
+                
+                <td>11.0</td>
+                
+                <td>60.0</td>
+                
+                <td>14.0</td>
+                
+                <td>Bajo en Grasa</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Weetabix</td>
+                
+                <td>cereals</td>
+                
+                <td>wholegrain wheat (95%), malted barley extract, sugar, salt, niacin, iron, riboflavin (b2), thiamin (bi), acid,</td>
+                
+                <td>362</td>
+                
+                <td>2.0</td>
+                
+                <td>12.0</td>
+                
+                <td>69.0</td>
+                
+                <td>4.4</td>
+                
+                <td>Bajo en Grasa</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Pain de mie grandes tranches Seigle & Graines 500g</td>
+                
+                <td>cereals</td>
+                
+                <td>Farine de BLÉ* 41 % , eau, graines de lin brun 6,1 %, graines de lin jaune 6,1 %, graines de tournesol décortiquées 6 %, farine de SEIGLE 5,1 %, GLUTEN DE BLÉ, farine d'ORGE maltée torréfiée, levure, extrait de malt d'ORGE, sel, vinaigre, arôme naturel (contient alcool), conservateur : propionate de calcium, antioxydant : extrait d'acérola. Traces éventuelles d'œufs, lait, graines de sésame, soja et moutarde. * Ingrédient issu du commerce équitable français.</td>
+                
+                <td>297</td>
+                
+                <td>9.6</td>
+                
+                <td>12.0</td>
+                
+                <td>37.0</td>
+                
+                <td>4.2</td>
+                
+                <td>Bajo en Grasa</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Weetabix produit à base de blé complet 100%</td>
+                
+                <td>cereals</td>
+                
+                <td>_Blé_ complet (95%), extrait d'_orge_ maltée, sucre, sel, niacine, fer, vitamines B2, B1 et B9.</td>
+                
+                <td>362</td>
+                
+                <td>2.0</td>
+                
+                <td>12.0</td>
+                
+                <td>69.0</td>
+                
+                <td>4.2</td>
+                
+                <td>Bajo en Grasa</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Flocons d'avoine complète</td>
+                
+                <td>cereals</td>
+                
+                <td>100% Flocons d'avoine.</td>
+                
+                <td>375</td>
+                
+                <td>8.0</td>
+                
+                <td>11.0</td>
+                
+                <td>60.0</td>
+                
+                <td>1.1</td>
+                
+                <td>Bajo en Grasa</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Muesli Raisin, Figue, Abricot</td>
+                
+                <td>cereals</td>
+                
+                <td>Flocons d'avoine* complète, Flocons de blé* complet, Raisins 12% (raisins*, huile de tournesol*), Figues* séchées 8% (figues*, farine de riz*), Pétales de maïs*, Flocons d'épeautre* complet (blé), Abricots* secs 3% (abricots*, farine de riz*) ✔Graines de tournesol*, Pétales d'épeautre* complet (blé), Graines de lin*, Graines de courge*.
+ Peut contenir des traces de lait, de fruits à coque, de graines de sésame et de soja. *Ingrédients biologiques.</td>
+                
+                <td>352</td>
+                
+                <td>5.8</td>
+                
+                <td>11.0</td>
+                
+                <td>59.0</td>
+                
+                <td>14.0</td>
+                
+                <td>Bajo en Grasa</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>NESTLE CHOCAPIC Céréales 750g</td>
+                
+                <td>cereals</td>
+                
+                <td>BLE complet 35,0%, chocolat en poudre 22,5% (sucre, cacao en poudre*), farine de BLE 17,0%, semoule de maïs, sirop de glucose, sucre, extrait de malt d'ORGE (ORGE, ORGE malté), contient de l'huile de tournesol et/ou de palme, carbonate de calcium, émulsifiant : lécithine ; sel, arômes naturels, fer, vitamines B3, B5, D, B6, B1, B2 et B9. Peut contenir du LAIT et des FRUITS A COQUE.* Bilan massique certifié rainforest Alliance www.ra.org/fr.</td>
+                
+                <td>388</td>
+                
+                <td>4.8</td>
+                
+                <td>8.8</td>
+                
+                <td>73.6</td>
+                
+                <td>22.4</td>
+                
+                <td>Bajo en Grasa</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Copos de avena</td>
+                
+                <td>cereals</td>
+                
+                <td>Avena integral 100%</td>
+                
+                <td>375</td>
+                
+                <td>7.0</td>
+                
+                <td>14.0</td>
+                
+                <td>59.0</td>
+                
+                <td>0.7</td>
+                
+                <td>Bajo en Grasa</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>nan</td>
+                
+                <td>cereals</td>
+                
+                <td>corn starch</td>
+                
+                <td>355</td>
+                
+                <td>0.5</td>
+                
+                <td>0.5</td>
+                
+                <td>86.0</td>
+                
+                <td>0.5</td>
+                
+                <td>Bajo en Grasa</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Croustillant Chocolat</td>
+                
+                <td>cereals</td>
+                
+                <td>Flocons d'avoine complète, Flocons de blé complet, Chocolat noir 10% (pâte de cacao, sucre de canne non raffiné, beurre de cacao), Riz extrudé (farine de riz), Sucre de canne non raffiné, Farine de blé, Huile de tournesol, Miel, Stabilisant: gomme d'acacia, Mélasses, Flocons de noix de coco, Sel marin, Cannelle, Antioxydant: extrait riche en tocophérols</td>
+                
+                <td>437</td>
+                
+                <td>15.0</td>
+                
+                <td>9.7</td>
+                
+                <td>61.0</td>
+                
+                <td>15.0</td>
+                
+                <td>Alta Energía</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Weetabix</td>
+                
+                <td>cereals</td>
+                
+                <td>Wholegrain _Wheat_ (95%), Malted _Barley_ Extract, Sugar, Salt, Niacin, Iron, Riboflavin (B2), Thiamin (B1), Folic Acid.</td>
+                
+                <td>362</td>
+                
+                <td>2.0</td>
+                
+                <td>12.0</td>
+                
+                <td>69.0</td>
+                
+                <td>4.2</td>
+                
+                <td>Bajo en Grasa</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Corn Flakes</td>
+                
+                <td>cereals</td>
+                
+                <td>corn, sugar, aroma of malt of barley, salt, vitamins and minerals : vitamin b3/pp, vitamin b6, vitamin b2, vitamin b1, vitamin b9, vitamin d, vitamin b12, iron,</td>
+                
+                <td>378</td>
+                
+                <td>0.9</td>
+                
+                <td>7.0</td>
+                
+                <td>84.0</td>
+                
+                <td>8.0</td>
+                
+                <td>Bajo en Grasa</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Special Muesli 30% fruits & noix</td>
+                
+                <td>cereals</td>
+                
+                <td>Céréales complètes flocons d'avoine, flocons de blé, flocons de blé grillés noix raisins secs, raisins de sultane, abricots secs hachés, tranches de pommes séchées, éclats de noix de coco grillés, noisettes hachées grillées, amandes effilées flocons d'orge, graines de tournesol.</td>
+                
+                <td>362</td>
+                
+                <td>7.2</td>
+                
+                <td>10.2</td>
+                
+                <td>59.6</td>
+                
+                <td>17.2</td>
+                
+                <td>Bajo en Grasa</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Spaghetti n°5</td>
+                
+                <td>cereals</td>
+                
+                <td>Semoule de BLÉ dur, eau. Peut contenir des traces de SOJA et de MOUTARDE.</td>
+                
+                <td>359</td>
+                
+                <td>2.0</td>
+                
+                <td>13.0</td>
+                
+                <td>71.0</td>
+                
+                <td>3.5</td>
+                
+                <td>Bajo en Grasa</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Ziegenfrischkäse Natur</td>
+                
+                <td>cheeses</td>
+                
+                <td>Ziegenfrischkäse, Salz</td>
+                
+                <td>177</td>
+                
+                <td>13.0</td>
+                
+                <td>11.0</td>
+                
+                <td>4.0</td>
+                
+                <td>3.5</td>
+                
+                <td>Otro</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Carré frais 0%</td>
+                
+                <td>cheeses</td>
+                
+                <td>Lait écrémé, sel, ferments lactiques</td>
+                
+                <td>78</td>
+                
+                <td>0.2</td>
+                
+                <td>17.5</td>
+                
+                <td>1.5</td>
+                
+                <td>1.5</td>
+                
+                <td>Bajo en Grasa</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Caprice des dieux</td>
+                
+                <td>cheeses</td>
+                
+                <td>pasteurized cow's milk and cream from france, salt, lactic ferments (milk)</td>
+                
+                <td>333</td>
+                
+                <td>30.0</td>
+                
+                <td>15.0</td>
+                
+                <td>0.8</td>
+                
+                <td>0.1</td>
+                
+                <td>Otro</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Paysan Breton - Le Fromage Fouetté Madame Loïk - Nature au Sel de Guérande</td>
+                
+                <td>cheeses</td>
+                
+                <td>_Fromage_ frais, sel de Guérande 1,1%</td>
+                
+                <td>252</td>
+                
+                <td>24.0</td>
+                
+                <td>5.9</td>
+                
+                <td>3.0</td>
+                
+                <td>3.0</td>
+                
+                <td>Otro</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Salakis 100% Brebis</td>
+                
+                <td>cheeses</td>
+                
+                <td>sheep cheese</td>
+                
+                <td>272</td>
+                
+                <td>22.8</td>
+                
+                <td>15.7</td>
+                
+                <td>0.8</td>
+                
+                <td>0.8</td>
+                
+                <td>Alta Proteína</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Carré frais</td>
+                
+                <td>cheeses</td>
+                
+                <td>whole milk, cream, salt, lactic ferments,</td>
+                
+                <td>193</td>
+                
+                <td>15.0</td>
+                
+                <td>12.0</td>
+                
+                <td>2.5</td>
+                
+                <td>2.5</td>
+                
+                <td>Otro</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>St Môret</td>
+                
+                <td>cheeses</td>
+                
+                <td>_lait_ et _crème_ pasteurisés (Origine: France), protéines du _lait_, sel</td>
+                
+                <td>205</td>
+                
+                <td>17.8</td>
+                
+                <td>8.3</td>
+                
+                <td>3.0</td>
+                
+                <td>3.0</td>
+                
+                <td>Otro</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>La bûche Sainte-Maure (Poitou-Charentes</td>
+                
+                <td>cheeses</td>
+                
+                <td>goat's milk (origin france), salt, ferments, coagulant,</td>
+                
+                <td>291</td>
+                
+                <td>23.0</td>
+                
+                <td>20.0</td>
+                
+                <td>1.0</td>
+                
+                <td>1.0</td>
+                
+                <td>Alta Proteína</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>PRESIDENT CAMEMBERT 250g</td>
+                
+                <td>cheeses</td>
+                
+                <td>LAIT (origine France), ferments lactiques et d'affinage, sel</td>
+                
+                <td>269</td>
+                
+                <td>21.0</td>
+                
+                <td>20.0</td>
+                
+                <td>0.0</td>
+                
+                <td>0.0</td>
+                
+                <td>Alta Proteína</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Coulommiers Doux et Crémeux</td>
+                
+                <td>cheeses</td>
+                
+                <td>cow's milk, salt, ferments (contain milk),</td>
+                
+                <td>283</td>
+                
+                <td>23.0</td>
+                
+                <td>18.0</td>
+                
+                <td>1.0</td>
+                
+                <td>0.1</td>
+                
+                <td>Alta Proteína</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>President emmental coeur de meule 250g</td>
+                
+                <td>cheeses</td>
+                
+                <td>LAIT pasteurisé de vache , sel, ferments.</td>
+                
+                <td>369</td>
+                
+                <td>29.0</td>
+                
+                <td>27.0</td>
+                
+                <td>0.5</td>
+                
+                <td>0.5</td>
+                
+                <td>Alta Proteína</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Le Goût Primeur format familial</td>
+                
+                <td>cheeses</td>
+                
+                <td>Lait et crème pasteurisés (Origine : France), protéines du lait, sel,</td>
+                
+                <td>205</td>
+                
+                <td>17.8</td>
+                
+                <td>8.3</td>
+                
+                <td>3.0</td>
+                
+                <td>3.0</td>
+                
+                <td>Otro</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Caprice des dieux</td>
+                
+                <td>cheeses</td>
+                
+                <td>lait de vache pasteurisé de France, sel, ferments lactiques (lait),</td>
+                
+                <td>333</td>
+                
+                <td>30.0</td>
+                
+                <td>15.3</td>
+                
+                <td>0.8</td>
+                
+                <td>0.1</td>
+                
+                <td>Alta Proteína</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Paysan Breton - Le Fromage Fouetté Madame Loïk - Nature au Sel de Guérande</td>
+                
+                <td>cheeses</td>
+                
+                <td>Fromage frais, sel de Guérande 1,1%</td>
+                
+                <td>252</td>
+                
+                <td>24.0</td>
+                
+                <td>5.9</td>
+                
+                <td>3.0</td>
+                
+                <td>3.0</td>
+                
+                <td>Otro</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Kiri-Käse</td>
+                
+                <td>cheeses</td>
+                
+                <td>pasteurized fresh milk 53% (origin: france), cream 32% (origin: france), water, milk proteins, milk mineral concentrate, lactic ferments, salt,</td>
+                
+                <td>305</td>
+                
+                <td>29.0</td>
+                
+                <td>9.0</td>
+                
+                <td>2.0</td>
+                
+                <td>2.0</td>
+                
+                <td>Otro</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>SKYR</td>
+                
+                <td>cheeses</td>
+                
+                <td>Lait écrémé, ferments lactiques (lait). Lait: Origine France</td>
+                
+                <td>57</td>
+                
+                <td>0.2</td>
+                
+                <td>10.0</td>
+                
+                <td>3.9</td>
+                
+                <td>3.9</td>
+                
+                <td>Bajo en Grasa</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>La vache qui rit</td>
+                
+                <td>cheeses</td>
+                
+                <td>LAIT écrémé réhydraté (origine : France), FROMAGES, BEURRE, concentré des minéraux du LAIT, sel de fonte : polyphosphates, protéines de LAIT, concentré LACTIQUE LAITIER.</td>
+                
+                <td>228</td>
+                
+                <td>17.5</td>
+                
+                <td>11.5</td>
+                
+                <td>6.0</td>
+                
+                <td>6.0</td>
+                
+                <td>Otro</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Kiri® Crème 12 portions</td>
+                
+                <td>cheeses</td>
+                
+                <td>LAIT frais pasteurisé 53% (origine : France), CRÈME 32% (origine : France), eau, concentré des minéraux du LAIT, protéines de LAIT, ferments LACTIQUES, sel.</td>
+                
+                <td>305</td>
+                
+                <td>29.0</td>
+                
+                <td>9.0</td>
+                
+                <td>2.0</td>
+                
+                <td>2.0</td>
+                
+                <td>Otro</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>Leerdammer original 8 tranches 200g</td>
+                
+                <td>cheeses</td>
+                
+                <td>LAIT pasteurisé, sel, ferments LACTIQUES, enzyme coagulante microbienne</td>
+                
+                <td>352</td>
+                
+                <td>27.5</td>
+                
+                <td>26.0</td>
+                
+                <td>0.1</td>
+                
+                <td>0.1</td>
+                
+                <td>Alta Proteína</td>
+                
+            </tr>
+            
+            <tr>
+                
+                <td>L'original tartare ail & fines herbes</td>
+                
+                <td>cheeses</td>
+                
+                <td>Lait et crème pasteurisés (origine: France), ail et fines herbes (2,6%), sel, poivre. Peut contenir des fruits à coque.</td>
+                
+                <td>348</td>
+                
+                <td>34.5</td>
+                
+                <td>7.0</td>
+                
+                <td>2.3</td>
+                
+                <td>2.3</td>
+                
+                <td>Otro</td>
+                
+            </tr>
+            
+        </tbody>
+    </table>
+    <script>
+        $(document).ready(function() {
+            $('#dataTable').DataTable();
+        });
+    </script>
+</body>
+</html>
