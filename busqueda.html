@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Búsqueda de Productos Alimenticios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #fff4e6; /* Fondo blanco con un ligero tono naranja */
+        }
+        #app {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px 0;
+            width: calc(100% - 22px);
+            border: 1px solid #ffa500; /* Borde naranja */
+            border-radius: 5px;
+        }
+        button {
+            background-color: #ffa500; /* Fondo naranja */
+            color: white; /* Texto blanco */
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff8c00; /* Fondo naranja oscuro al pasar el cursor */
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-around;
+        }
+        .producto {
+            flex: 1 1 calc(25% - 1rem); /* 4 productos por fila */
+            box-sizing: border-box;
+            margin: 0.5rem;
+            padding: 1rem;
+            border: 1px solid #ffa500; /* Borde naranja */
+            border-radius: 5px;
+            text-align: center;
+            background-color: #fff5e1; /* Fondo blanco con un ligero tono naranja */
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        h1 {
+            color: #ff8c00; /* Título naranja oscuro */
+        }
+        h2 {
+            color: #ff8c00; /* Subtítulo naranja oscuro */
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Bienvenido a la página de búsqueda de productos alimenticios</h1>
+        <input type="text" id="query" placeholder="Introduce el nombre de un producto o categoría">
+        <button onclick="lookupCategory()">Buscar</button>
+        <div class="container" id="product-info"></div>
+    </div>
+
+    <script>
+        async function lookupCategory() {
+            const query = document.getElementById('query').value;
+            const endpoint = `https://world.openfoodfacts.org/category/${query}.json`;
+
+            try {
+                const response = await fetch(endpoint);
+                const data = await response.json();
+                const products = data.products.slice(0, 20);
+                
+                let product_info = '';
+                products.forEach(product => {
+                    product_info += `
+                        <div class="producto">
+                            <h2>${product.product_name || 'No product name'}</h2>
+                            <p><strong>Marca:</strong> ${product.brands || 'No brand'}</p>
+                            <p><strong>Ingredientes:</strong> ${product.ingredients_text || 'No ingredients'}</p>
+                            <p><strong>Nutrientes:</strong></p>
+                            <ul>
+                                <li>Energía: ${product.nutriments.energy || 'N/A'} kJ</li>
+                                <li>Grasa: ${product.nutriments.fat || 'N/A'} g</li>
+                                <li>Carbohidratos: ${product.nutriments.carbohydrates || 'N/A'} g</li>
+                                <li>Proteínas: ${product.nutriments.proteins || 'N/A'} g</li>
+                                <li>Sal: ${product.nutriments.salt || 'N/A'} g</li>
+                                <li>Azúcares: ${product.nutriments.sugars || 'N/A'} g</li>
+                            </ul>
+                            <img src="${product.image_url || ''}" alt="${product.product_name || 'No product name'}">
+                        </div>
+                    `;
+                });
+
+                document.getElementById('product-info').innerHTML = product_info || '<p>No se encontraron productos.</p>';
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('product-info').innerHTML = `<p>Error al buscar la información de los productos.</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
